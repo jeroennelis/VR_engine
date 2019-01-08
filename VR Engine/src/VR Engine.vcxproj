@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="test|Win32">
+      <Configuration>test</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="test|x64">
+      <Configuration>test</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{BB76801C-DDC1-4295-AEF2-B69D2E3BC224}</ProjectGuid>
+    <RootNamespace>VREngine</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='test|Win32'">
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='test|x64'">
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Depencencies\openvr\headers;$(SolutionDir)\Depencencies\GLM\include;$(SolutionDir)\Depencencies\GLFW\include;$(SolutionDir)\Depencencies\GLEW\include;$(SolutionDir)\Depencencies\openvr\headers;$(SolutionDir)\Depencencies\GLM\include;$(SolutionDir)\Depencencies\GLFW\include;$(SolutionDir)\Depencencies\GLEW\include;$(SolutionDir)\Depencencies\openvr;$(SolutionDir)Depencencies\GLEW\include;$(SolutionDir)Depencencies\GLM\include;$(SolutionDir)Depencencies\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile />
+      <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions); GLEW_STATIC</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Depencencies\GLFW\lib-vc2015;$(SolutionDir)\Depencencies\GLEW\lib\Release\Win32;$(SolutionDir)\Depencencies\openvr\lib\win32</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;User32.lib;Gdi32.lib;Shell32.lib;glew32s.lib;openvr_api.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Depencencies\openvr\headers;$(SolutionDir)\Depencencies\GLM\include;$(SolutionDir)\Depencencies\GLFW\include;$(SolutionDir)\Depencencies\GLEW\include;$(SolutionDir)Depencencies\GLEW\include;$(SolutionDir)Depencencies\GLM\include;$(SolutionDir)Depencencies\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile />
+      <PreprocessorDefinitions>GLEW_STATIC</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Depencencies\GLFW\lib-vc2015;$(SolutionDir)Depencencies\GLEW\lib\Release\x64;$(SolutionDir)Depencencies\openvr\lib\win64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;User32.lib;Gdi32.lib;Shell32.lib;glew32s.lib;openvr_api.lib;</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Depencencies\openvr\headers;$(SolutionDir)\Depencencies\GLM\include;$(SolutionDir)\Depencencies\GLFW\include;$(SolutionDir)\Depencencies\GLEW\include;$(SolutionDir)\Depencencies\openvr\headers;$(SolutionDir)\Depencencies\GLM\include;$(SolutionDir)\Depencencies\GLFW\include;$(SolutionDir)\Depencencies\GLEW\include;$(SolutionDir)Depencencies\GLEW\include;$(SolutionDir)Depencencies\GLM\include;$(SolutionDir)Depencencies\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile />
+      <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions); GLEW_STATIC</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Depencencies\GLFW\lib-vc2015;$(SolutionDir)\Depencencies\GLEW\lib\Release\Win32;$(SolutionDir)\Depencencies\openvr\lib\win32</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;User32.lib;Gdi32.lib;Shell32.lib;glew32s.lib;openvr_api.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Depencencies\openvr\headers;$(SolutionDir)\Depencencies\GLM\include;$(SolutionDir)\Depencencies\GLFW\include;$(SolutionDir)\Depencencies\GLEW\include;$(SolutionDir)Depencencies\GLEW\include;$(SolutionDir)Depencencies\GLM\include;$(SolutionDir)Depencencies\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile />
+      <PreprocessorDefinitions>GLEW_STATIC</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Depencencies\GLFW\lib-vc2015;$(SolutionDir)Depencencies\GLEW\lib\Release\x64;$(SolutionDir)Depencencies\openvr\lib\win64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;User32.lib;Gdi32.lib;Shell32.lib;glew32s.lib;openvr_api.lib;</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='test|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Depencencies\openvr\headers;$(SolutionDir)\Depencencies\GLM\include;$(SolutionDir)\Depencencies\GLFW\include;$(SolutionDir)\Depencencies\GLEW\include;$(SolutionDir)\Depencencies\openvr\headers;$(SolutionDir)\Depencencies\GLM\include;$(SolutionDir)\Depencencies\GLFW\include;$(SolutionDir)\Depencencies\GLEW\include;$(SolutionDir)Depencencies\GLEW\include;$(SolutionDir)Depencencies\GLM\include;$(SolutionDir)Depencencies\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Depencencies\GLFW\lib-vc2015;$(SolutionDir)\Depencencies\GLEW\lib\Release\Win32;$(SolutionDir)\Depencencies\openvr\lib\win32</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;User32.lib;Gdi32.lib;Shell32.lib;glew32s.lib;openvr_api.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='test|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Depencencies\openvr\headers;$(SolutionDir)\Depencencies\GLM\include;$(SolutionDir)\Depencencies\GLFW\include;$(SolutionDir)\Depencencies\GLEW\include;$(SolutionDir)Depencencies\GLEW\include;$(SolutionDir)Depencencies\GLM\include;$(SolutionDir)Depencencies\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>GLEW_STATIC</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Depencencies\GLFW\lib-vc2015;$(SolutionDir)Depencencies\GLEW\lib\Release\x64;$(SolutionDir)Depencencies\openvr\lib\win64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;User32.lib;Gdi32.lib;Shell32.lib;glew32s.lib;openvr_api.lib;</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="CompanionWindow.cpp" />
+    <ClCompile Include="CompanionWindowShader.cpp" />
+    <ClCompile Include="Component.cpp" />
+    <ClCompile Include="DataStructures.cpp" />
+    <ClCompile Include="EditorUiRenderer.cpp" />
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="FontType.cpp" />
+    <ClCompile Include="FrameBuffers.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="GrassRenderer.cpp" />
+    <ClCompile Include="GrassShader.cpp" />
+    <ClCompile Include="GuiRenderer.cpp" />
+    <ClCompile Include="GuiShader.cpp" />
+    <ClCompile Include="GuiTexture.cpp" />
+    <ClCompile Include="GUIText.cpp" />
+    <ClCompile Include="Light.cpp" />
+    <ClCompile Include="Loader.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MasterRenderer.cpp" />
+    <ClCompile Include="Maths.cpp" />
+    <ClCompile Include="ModelTexture.cpp" />
+    <ClCompile Include="Move.cpp" />
+    <ClCompile Include="OBJLoader.cpp" />
+    <ClCompile Include="PointCloudRenderer.cpp" />
+    <ClCompile Include="PointCloudShader.cpp" />
+    <ClCompile Include="EntityRenderer.cpp" />
+    <ClCompile Include="MeshRenderer.cpp" />
+    <ClCompile Include="Quaternion.cpp" />
+    <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="SkyboxRenderer.cpp" />
+    <ClCompile Include="SkyboxShader.cpp" />
+    <ClCompile Include="StaticShader.cpp" />
+    <ClCompile Include="StringFunctions.cpp" />
+    <ClCompile Include="Terrain.cpp" />
+    <ClCompile Include="TerrainRenderer.cpp" />
+    <ClCompile Include="TerrainShader.cpp" />
+    <ClCompile Include="TerrainTexturePack.cpp" />
+    <ClCompile Include="TextMeshCreator.cpp" />
+    <ClCompile Include="TextMeshData.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="TexturedModel.cpp" />
+    <ClCompile Include="Transform.cpp" />
+    <ClCompile Include="VAO.cpp" />
+    <ClCompile Include="VBO.cpp" />
+    <ClCompile Include="vendor\imGuizmo\ImGuizmo.cpp" />
+    <ClCompile Include="vendor\imgui\imgui.cpp" />
+    <ClCompile Include="vendor\imgui\imgui_demo.cpp" />
+    <ClCompile Include="vendor\imgui\imgui_draw.cpp" />
+    <ClCompile Include="vendor\imgui\imgui_impl_glfw_gl3.cpp" />
+    <ClCompile Include="vendor\stb_image.cpp" />
+    <ClCompile Include="VRDevice.cpp" />
+    <ClCompile Include="VRModelShader.cpp" />
+    <ClCompile Include="VRRenderer.cpp" />
+    <ClCompile Include="VRSettings.cpp" />
+    <ClCompile Include="WaterFrameBuffer.cpp" />
+    <ClCompile Include="WaterRenderer.cpp" />
+    <ClCompile Include="WaterShader.cpp" />
+    <ClCompile Include="Window.cpp" />
+    <ClCompile Include="XYZLoader.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="CompanionWindow.h" />
+    <ClInclude Include="CompanionWindowShader.h" />
+    <ClInclude Include="Component.h" />
+    <ClInclude Include="DataStructures.h" />
+    <ClInclude Include="EditorUiRenderer.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="FontType.h" />
+    <ClInclude Include="FrameBuffer.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="GL.h" />
+    <ClInclude Include="GrassRenderer.h" />
+    <ClInclude Include="GrassShader.h" />
+    <ClInclude Include="GuiRenderer.h" />
+    <ClInclude Include="GuiShader.h" />
+    <ClInclude Include="GuiTexture.h" />
+    <ClInclude Include="GUIText.h" />
+    <ClInclude Include="Light.h" />
+    <ClInclude Include="Loader.h" />
+    <ClInclude Include="MasterRenderer.h" />
+    <ClInclude Include="Maths.h" />
+    <ClInclude Include="ModelTexture.h" />
+    <ClInclude Include="Move.h" />
+    <ClInclude Include="OBJLoader.h" />
+    <ClInclude Include="PointCloudRenderer.h" />
+    <ClInclude Include="PointCloudShader.h" />
+    <ClInclude Include="Quaternion.h" />
+    <ClInclude Include="RawModel.h" />
+    <ClInclude Include="EntityRenderer.h" />
+    <ClInclude Include="MeshRenderer.h" />
+    <ClInclude Include="Renderer.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="Shader.h" />
+    <ClInclude Include="SkyboxRenderer.h" />
+    <ClInclude Include="SkyboxShader.h" />
+    <ClInclude Include="StaticShader.h" />
+    <ClInclude Include="StringFunctions.h" />
+    <ClInclude Include="Terrain.h" />
+    <ClInclude Include="TerrainRenderer.h" />
+    <ClInclude Include="TerrainShader.h" />
+    <ClInclude Include="TerrainTexturePack.h" />
+    <ClInclude Include="TextMeshCreator.h" />
+    <ClInclude Include="TextMeshData.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="TexturedModel.h" />
+    <ClInclude Include="Transform.h" />
+    <ClInclude Include="VAO.h" />
+    <ClInclude Include="VBO.h" />
+    <ClInclude Include="vendor\imGuizmo\ImGuizmo.h" />
+    <ClInclude Include="vendor\imgui\imconfig.h" />
+    <ClInclude Include="vendor\imgui\imgui.h" />
+    <ClInclude Include="vendor\imgui\imgui_impl_glfw_gl3.h" />
+    <ClInclude Include="vendor\imgui\imgui_internal.h" />
+    <ClInclude Include="vendor\imgui\stb_rect_pack.h" />
+    <ClInclude Include="vendor\imgui\stb_textedit.h" />
+    <ClInclude Include="vendor\imgui\stb_truetype.h" />
+    <ClInclude Include="vendor\stb_image.h" />
+    <ClInclude Include="VertexBufferLayout.h" />
+    <ClInclude Include="VRDevice.h" />
+    <ClInclude Include="VRModelShader.h" />
+    <ClInclude Include="VRRenderer.h" />
+    <ClInclude Include="VRSettings.h" />
+    <ClInclude Include="WaterFrameBuffers.h" />
+    <ClInclude Include="WaterRenderer.h" />
+    <ClInclude Include="WaterShader.h" />
+    <ClInclude Include="WaterTile.h" />
+    <ClInclude Include="Window.h" />
+    <ClInclude Include="XYZLoader.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\shaders\AnimatedEntity.shader" />
+    <None Include="res\shaders\Basic.shader" />
+    <None Include="res\shaders\CompanionWindow.shader" />
+    <None Include="res\shaders\Grass.shader" />
+    <None Include="res\shaders\Gui.shader" />
+    <None Include="res\shaders\PointCloud.shader" />
+    <None Include="res\shaders\Skybox.shader" />
+    <None Include="res\shaders\Terrain.shader" />
+    <None Include="res\shaders\VRModel.shader" />
+    <None Include="res\shaders\Water.shader" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\textures\test.png" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

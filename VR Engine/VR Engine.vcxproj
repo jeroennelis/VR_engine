@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="test|x64">
+      <Configuration>test</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{BB76801C-DDC1-4295-AEF2-B69D2E3BC224}</ProjectGuid>
+    <RootNamespace>VREngine</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='test|x64'">
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>..\bin\Debug-windows-x86_64\VR_Engine\</OutDir>
+    <IntDir>..\bin-int\Debug-windows-x86_64\VR_Engine\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>..\bin\Release-windows-x86_64\VR_Engine\</OutDir>
+    <IntDir>..\bin-int\Release-windows-x86_64\VR_Engine\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)VR Engine\vendor\openvr\headers;$(SolutionDir)VR Engine\vendor\GLM\include;$(SolutionDir)VR Engine\vendor\GLFW\include;$(SolutionDir)VR Engine\vendor\STBImage;$(SolutionDir)VR Engine\vendor\OBJLoader;$(SolutionDir)VR Engine\vendor\imGuizmo;$(SolutionDir)VR Engine\vendor\imgui;$(SolutionDir)VR Engine\vendor\GLEW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile />
+      <PreprocessorDefinitions>GLEW_STATIC</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)VR Engine\vendor\GLFW\lib-vc2015;$(SolutionDir)VR Engine\vendor\GLEW\lib\Release\x64;$(SolutionDir)VR Engine\vendor\openvr\lib\win64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;User32.lib;Gdi32.lib;Shell32.lib;glew32s.lib;openvr_api.lib;</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)VR Engine\vendor\openvr\headers;$(SolutionDir)VR Engine\vendor\GLM\include;$(SolutionDir)VR Engine\vendor\GLFW\include;$(SolutionDir)VR Engine\vendor\STBImage;$(SolutionDir)VR Engine\vendor\OBJLoader;$(SolutionDir)VR Engine\vendor\imGuizmo;$(SolutionDir)VR Engine\vendor\imgui;$(SolutionDir)VR Engine\vendor\GLEW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile />
+      <PreprocessorDefinitions>GLEW_STATIC</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)VR Engine\vendor\GLFW\lib-vc2015;$(SolutionDir)VR Engine\vendor\GLEW\lib\Release\x64;$(SolutionDir)VR Engine\vendor\openvr\lib\win64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;User32.lib;Gdi32.lib;Shell32.lib;glew32s.lib;openvr_api.lib;</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='test|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)VR Engine\vendor\openvr\headers;$(SolutionDir)VR Engine\vendor\GLM\include;$(SolutionDir)VR Engine\vendor\GLFW\include;$(SolutionDir)VR Engine\vendor\STBImage;$(SolutionDir)VR Engine\vendor\OBJLoader;$(SolutionDir)VR Engine\vendor\imGuizmo;$(SolutionDir)VR Engine\vendor\imgui;$(SolutionDir)VR Engine\vendor\GLEW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>GLEW_STATIC</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)VR Engine\vendor\GLFW\lib-vc2015;$(SolutionDir)VR Engine\vendor\GLEW\lib\Release\x64;$(SolutionDir)VR Engine\vendor\openvr\lib\win64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;User32.lib;Gdi32.lib;Shell32.lib;glew32s.lib;openvr_api.lib;</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Camera.cpp" />
+    <ClCompile Include="src\CompanionWindow.cpp" />
+    <ClCompile Include="src\CompanionWindowShader.cpp" />
+    <ClCompile Include="src\Component.cpp" />
+    <ClCompile Include="src\DataStructures.cpp" />
+    <ClCompile Include="src\EditorUiRenderer.cpp" />
+    <ClCompile Include="src\Entity.cpp" />
+    <ClCompile Include="src\EntityRenderer.cpp" />
+    <ClCompile Include="src\FontType.cpp" />
+    <ClCompile Include="src\FrameBuffers.cpp" />
+    <ClCompile Include="src\GameObject.cpp" />
+    <ClCompile Include="src\GrassRenderer.cpp" />
+    <ClCompile Include="src\GrassShader.cpp" />
+    <ClCompile Include="src\GuiRenderer.cpp" />
+    <ClCompile Include="src\GuiShader.cpp" />
+    <ClCompile Include="src\GUIText.cpp" />
+    <ClCompile Include="src\GuiTexture.cpp" />
+    <ClCompile Include="src\Light.cpp" />
+    <ClCompile Include="src\Loader.cpp" />
+    <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\MasterRenderer.cpp" />
+    <ClCompile Include="src\Maths.cpp" />
+    <ClCompile Include="src\MeshRenderer.cpp" />
+    <ClCompile Include="src\ModelTexture.cpp" />
+    <ClCompile Include="src\Move.cpp" />
+    <ClCompile Include="src\OBJLoader.cpp" />
+    <ClCompile Include="src\PointCloudRenderer.cpp" />
+    <ClCompile Include="src\PointCloudShader.cpp" />
+    <ClCompile Include="src\Quaternion.cpp" />
+    <ClCompile Include="src\Renderer.cpp" />
+    <ClCompile Include="src\Scene.cpp" />
+    <ClCompile Include="src\Shader.cpp" />
+    <ClCompile Include="src\SkyboxRenderer.cpp" />
+    <ClCompile Include="src\SkyboxShader.cpp" />
+    <ClCompile Include="src\StaticShader.cpp" />
+    <ClCompile Include="src\StringFunctions.cpp" />
+    <ClCompile Include="src\Terrain.cpp" />
+    <ClCompile Include="src\TerrainRenderer.cpp" />
+    <ClCompile Include="src\TerrainShader.cpp" />
+    <ClCompile Include="src\TerrainTexturePack.cpp" />
+    <ClCompile Include="src\TextMeshCreator.cpp" />
+    <ClCompile Include="src\TextMeshData.cpp" />
+    <ClCompile Include="src\Texture.cpp" />
+    <ClCompile Include="src\TexturedModel.cpp" />
+    <ClCompile Include="src\Transform.cpp" />
+    <ClCompile Include="src\VAO.cpp" />
+    <ClCompile Include="src\VBO.cpp" />
+    <ClCompile Include="src\VRDevice.cpp" />
+    <ClCompile Include="src\VRModelShader.cpp" />
+    <ClCompile Include="src\VRRenderer.cpp" />
+    <ClCompile Include="src\VRSettings.cpp" />
+    <ClCompile Include="src\WaterFrameBuffer.cpp" />
+    <ClCompile Include="src\WaterRenderer.cpp" />
+    <ClCompile Include="src\WaterShader.cpp" />
+    <ClCompile Include="src\Window.cpp" />
+    <ClCompile Include="src\XYZLoader.cpp" />
+    <ClCompile Include="vendor\imGuizmo\ImGuizmo.cpp" />
+    <ClCompile Include="vendor\imgui\imgui.cpp" />
+    <ClCompile Include="vendor\imgui\imgui_demo.cpp" />
+    <ClCompile Include="vendor\imgui\imgui_draw.cpp" />
+    <ClCompile Include="vendor\imgui\imgui_impl_glfw_gl3.cpp" />
+    <ClCompile Include="vendor\STBImage\stb_image.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Camera.h" />
+    <ClInclude Include="src\CompanionWindow.h" />
+    <ClInclude Include="src\CompanionWindowShader.h" />
+    <ClInclude Include="src\Component.h" />
+    <ClInclude Include="src\DataStructures.h" />
+    <ClInclude Include="src\EditorUiRenderer.h" />
+    <ClInclude Include="src\Entity.h" />
+    <ClInclude Include="src\EntityRenderer.h" />
+    <ClInclude Include="src\FontType.h" />
+    <ClInclude Include="src\FrameBuffer.h" />
+    <ClInclude Include="src\GameObject.h" />
+    <ClInclude Include="src\GL.h" />
+    <ClInclude Include="src\GrassRenderer.h" />
+    <ClInclude Include="src\GrassShader.h" />
+    <ClInclude Include="src\GuiRenderer.h" />
+    <ClInclude Include="src\GuiShader.h" />
+    <ClInclude Include="src\GUIText.h" />
+    <ClInclude Include="src\GuiTexture.h" />
+    <ClInclude Include="src\Light.h" />
+    <ClInclude Include="src\Loader.h" />
+    <ClInclude Include="src\MasterRenderer.h" />
+    <ClInclude Include="src\Maths.h" />
+    <ClInclude Include="src\MeshRenderer.h" />
+    <ClInclude Include="src\ModelTexture.h" />
+    <ClInclude Include="src\Move.h" />
+    <ClInclude Include="src\OBJLoader.h" />
+    <ClInclude Include="src\PointCloudRenderer.h" />
+    <ClInclude Include="src\PointCloudShader.h" />
+    <ClInclude Include="src\Quaternion.h" />
+    <ClInclude Include="src\RawModel.h" />
+    <ClInclude Include="src\Renderer.h" />
+    <ClInclude Include="src\Scene.h" />
+    <ClInclude Include="src\Shader.h" />
+    <ClInclude Include="src\SkyboxRenderer.h" />
+    <ClInclude Include="src\SkyboxShader.h" />
+    <ClInclude Include="src\StaticShader.h" />
+    <ClInclude Include="src\StringFunctions.h" />
+    <ClInclude Include="src\Terrain.h" />
+    <ClInclude Include="src\TerrainRenderer.h" />
+    <ClInclude Include="src\TerrainShader.h" />
+    <ClInclude Include="src\TerrainTexturePack.h" />
+    <ClInclude Include="src\TextMeshCreator.h" />
+    <ClInclude Include="src\TextMeshData.h" />
+    <ClInclude Include="src\Texture.h" />
+    <ClInclude Include="src\TexturedModel.h" />
+    <ClInclude Include="src\Transform.h" />
+    <ClInclude Include="src\VAO.h" />
+    <ClInclude Include="src\VBO.h" />
+    <ClInclude Include="src\VertexBufferLayout.h" />
+    <ClInclude Include="src\VRDevice.h" />
+    <ClInclude Include="src\VRModelShader.h" />
+    <ClInclude Include="src\VRRenderer.h" />
+    <ClInclude Include="src\VRSettings.h" />
+    <ClInclude Include="src\WaterFrameBuffers.h" />
+    <ClInclude Include="src\WaterRenderer.h" />
+    <ClInclude Include="src\WaterShader.h" />
+    <ClInclude Include="src\WaterTile.h" />
+    <ClInclude Include="src\Window.h" />
+    <ClInclude Include="src\XYZLoader.h" />
+    <ClInclude Include="vendor\imGuizmo\ImGuizmo.h" />
+    <ClInclude Include="vendor\imgui\imconfig.h" />
+    <ClInclude Include="vendor\imgui\imgui.h" />
+    <ClInclude Include="vendor\imgui\imgui_impl_glfw_gl3.h" />
+    <ClInclude Include="vendor\imgui\imgui_internal.h" />
+    <ClInclude Include="vendor\imgui\stb_rect_pack.h" />
+    <ClInclude Include="vendor\imgui\stb_textedit.h" />
+    <ClInclude Include="vendor\imgui\stb_truetype.h" />
+    <ClInclude Include="vendor\STBImage\stb_image.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\animations\model.dae" />
+    <None Include="res\fonts\arial.fnt" />
+    <None Include="res\fonts\calibri.fnt" />
+    <None Include="res\fonts\harrington.fnt" />
+    <None Include="res\fonts\sans.fnt" />
+    <None Include="res\fonts\segoe.fnt" />
+    <None Include="res\fonts\segoeUI.fnt" />
+    <None Include="res\fonts\tahoma.fnt" />
+    <None Include="res\shaders\AnimatedEntity.shader" />
+    <None Include="res\shaders\Basic.shader" />
+    <None Include="res\shaders\CompanionWindow.shader" />
+    <None Include="res\shaders\Grass.shader" />
+    <None Include="res\shaders\Gui.shader" />
+    <None Include="res\shaders\PointCloud.shader" />
+    <None Include="res\shaders\Skybox.shader" />
+    <None Include="res\shaders\Terrain.shader" />
+    <None Include="res\shaders\VRModel.shader" />
+    <None Include="res\shaders\Water.shader" />
+    <None Include="src\imgui.ini" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\fonts\arial.png" />
+    <Image Include="res\fonts\calibri.png" />
+    <Image Include="res\fonts\harrington.png" />
+    <Image Include="res\fonts\sans.png" />
+    <Image Include="res\fonts\segoe.png" />
+    <Image Include="res\fonts\segoeUI.png" />
+    <Image Include="res\fonts\tahoma.png" />
+    <Image Include="res\textures\black.png" />
+    <Image Include="res\textures\blendMap.png" />
+    <Image Include="res\textures\character.png" />
+    <Image Include="res\textures\cube.png" />
+    <Image Include="res\textures\diffuse.png" />
+    <Image Include="res\textures\dirt.png" />
+    <Image Include="res\textures\fern.png" />
+    <Image Include="res\textures\grass.png" />
+    <Image Include="res\textures\grassTexture.png" />
+    <Image Include="res\textures\grassy.png" />
+    <Image Include="res\textures\grey.png" />
+    <Image Include="res\textures\heightmap perlin.jpg" />
+    <Image Include="res\textures\heightMap.png" />
+    <Image Include="res\textures\heightmap2.png" />
+    <Image Include="res\textures\huis.png" />
+    <Image Include="res\textures\mud.png" />
+    <Image Include="res\textures\newBlend.png" />
+    <Image Include="res\textures\normalMap.png" />
+    <Image Include="res\textures\path.png" />
+    <Image Include="res\textures\pdTexture.png" />
+    <Image Include="res\textures\pinkFlowers.png" />
+    <Image Include="res\textures\red.png" />
+    <Image Include="res\textures\skybox\back.png" />
+    <Image Include="res\textures\skybox\bottom.png" />
+    <Image Include="res\textures\skybox\front.png" />
+    <Image Include="res\textures\skybox\left.png" />
+    <Image Include="res\textures\skybox\right.png" />
+    <Image Include="res\textures\skybox\top.png" />
+    <Image Include="res\textures\socuwan.png" />
+    <Image Include="res\textures\stallTexture.png" />
+    <Image Include="res\textures\test.png" />
+    <Image Include="res\textures\tree.png" />
+    <Image Include="res\textures\waterDUDV.png" />
+    <Image Include="res\textures\white.png" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
